@@ -13,7 +13,8 @@ $graphScopes = @(
   "Group.ReadWrite.All", 
   "User.Read.All", 
   "Device.Read.All", 
-  "GroupMember.ReadWrite.All"
+  "GroupMember.ReadWrite.All",
+  "DeviceManagementManagedDevices.Read.All"
 )
 ForEach($scope in $graphScopes){
   $appRole = $graphApp.AppRoles | Where-Object {$_.Value -eq $scope}
@@ -29,3 +30,4 @@ ForEach($scope in $graphScopes){
     write-host "Scope $scope already assigned"
   }
 }
+
